@@ -10,40 +10,40 @@ public class StringTest {
 
     static Utility utility = new Utility() ;
     static int [] testArr = { 1, 2, 3 };
-    static String result = utility.convert(testArr);
+    static String result = utility.convert( testArr );
 
     @Test
     public void testIsString(){
-        Assertions.assertEquals(result.getClass(), String.class);
+        Assertions.assertEquals( result.getClass(), String.class );
     }
 
     @Test
     public void testArrayClassIsInt(){
-        Assertions.assertEquals(testArr.getClass(), int[].class);
+        Assertions.assertEquals( testArr.getClass(), int[].class );
     }
 
     @Test
     public void testStringNotNull(){
-        Assertions.assertNotNull(result);
+        Assertions.assertNotNull( result );
     }
 
     @Test
     public void testIsNotEmpty(){
-        Assertions.assertTrue(result.length()>0);
-        Assertions.assertTrue(testArr.length > 0);
+        Assertions.assertTrue(result.length()>0 );
+        Assertions.assertTrue(testArr.length > 0 );
     }
 
     @Test
     public void testSpaceSeparated(){
-        Assertions.assertTrue(result.contains(" "));
+        Assertions.assertTrue( result.contains(" ") );
     }
 
     @Test
     public void testNoSpaceInEnd(){
         String regex = "\\S$";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(result);
-        Assertions.assertTrue(matcher.find());
+        Pattern pattern = Pattern.compile( regex );
+        Matcher matcher = pattern.matcher( result );
+        Assertions.assertTrue( matcher.find() );
     }
 
 }
