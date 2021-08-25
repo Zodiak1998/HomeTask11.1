@@ -2,15 +2,28 @@ package ru.student.VladGedz;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
 public class StringTest {
 
-    Utility result = new Utility();
-    int[] test = new int[] { 1, 2, 3 };
+    static Utility utility ;
+    static String result;
+    int [] test = { 1, 2, 3 };
+
+    @BeforeAll
+    public static void setUtility(){
+        utility = new Utility();
+    }
+
+    @BeforeEach
+    public void testBefore(){
+        result = utility.convert(test);
+    }
 
     @Test
     public void testIsString(){
-        Assertions.assertEquals(result.convert(test).getClass(), String.class);
+        Assertions.assertEquals(result.getClass(), String.class);
     }
 
 }
