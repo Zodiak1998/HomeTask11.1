@@ -3,7 +3,6 @@ package ru.student.VladGedz;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 
 public class StringTest {
 
