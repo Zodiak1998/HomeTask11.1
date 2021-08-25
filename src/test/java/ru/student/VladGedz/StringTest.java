@@ -2,18 +2,12 @@ package ru.student.VladGedz;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 
 public class StringTest {
 
     static Utility utility = new Utility() ;
     static int [] testArr = { 1, 2, 3 };
     static String result = utility.convert(testArr);
-
-    @BeforeAll
-    public static void setUtility(){
-        Assertions.assertTrue(result.length() > 0);
-    }
 
     @Test
     public void testIsString(){
@@ -31,8 +25,16 @@ public class StringTest {
     }
 
     @Test
+    public void testIsNotEmpty(){
+        Assertions.assertTrue(result.length()>0);
+        Assertions.assertTrue(testArr.length > 0);
+    }
+
+    @Test
     public void testSpaceSeparated(){
         Assertions.assertTrue(result.contains(" "));
     }
+
+
 
 }
