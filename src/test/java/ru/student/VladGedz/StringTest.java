@@ -26,4 +26,9 @@ public class StringTest {
         Assertions.assertEquals(result.getClass(), String.class);
     }
 
+    @Test
+    public void testArrayClassIsInt(){
+        Assertions.assertEquals(testArr.getClass(), int[].class);
+    }
+
 }
