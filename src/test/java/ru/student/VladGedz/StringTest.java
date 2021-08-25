@@ -7,18 +7,13 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class StringTest {
 
-    static Utility utility ;
-    static String result = "";
-    int [] testArr = { 1, 2, 3 };
+    static Utility utility = new Utility() ;
+    static int [] testArr = { 1, 2, 3 };
+    static String result = utility.convert(testArr);
 
     @BeforeAll
     public static void setUtility(){
-        utility = new Utility();
-    }
-
-    @BeforeEach
-    public void testBefore(){
-        result = utility.convert(testArr);
+        Assertions.assertTrue(result.length() > 0);
     }
 
     @Test
@@ -29,6 +24,16 @@ public class StringTest {
     @Test
     public void testArrayClassIsInt(){
         Assertions.assertEquals(testArr.getClass(), int[].class);
+    }
+
+    @Test
+    public void testStringNotNull(){
+        Assertions.assertNotNull(result);
+    }
+
+    @Test
+    public void testSpaceSeparated(){
+        Assertions.assertTrue(result.contains(" "));
     }
 
 }
