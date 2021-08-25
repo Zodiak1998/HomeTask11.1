@@ -3,6 +3,9 @@ package ru.student.VladGedz;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class StringTest {
 
     static Utility utility = new Utility() ;
@@ -35,6 +38,12 @@ public class StringTest {
         Assertions.assertTrue(result.contains(" "));
     }
 
-
+    @Test
+    public void testNoSpaceInEnd(){
+        String regex = "\\S$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(result);
+        Assertions.assertTrue(matcher.find());
+    }
 
 }
