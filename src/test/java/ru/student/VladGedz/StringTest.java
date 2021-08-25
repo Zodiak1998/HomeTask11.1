@@ -8,8 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 public class StringTest {
 
     static Utility utility ;
-    static String result;
-    int [] test = { 1, 2, 3 };
+    static String result = "";
+    int [] testArr = { 1, 2, 3 };
 
     @BeforeAll
     public static void setUtility(){
@@ -18,7 +18,7 @@ public class StringTest {
 
     @BeforeEach
     public void testBefore(){
-        result = utility.convert(test);
+        result = utility.convert(testArr);
     }
 
     @Test
